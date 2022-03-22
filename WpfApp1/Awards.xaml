@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfApp1.Awards"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Награды" Height="450" Width="800" Icon="Icon/логотип_синий.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button x:Name="BtnAdateData" Content="Добавить" Click="BtnAdateData_Click"
+                    Width="100" Height="40" Background="#FFE1E4FF"></Button>
+            <Button x:Name="BtnDaleteData" Content="Удалить" Click="BtnDaleteData_Click"
+                    Width="100" Height="40" Background="#FFE1E4FF"></Button>
+            <Button x:Name="BtnBack" Content="Назад" Click="BtnBack_Click"
+                    Width="100" Height="40" Background="#FFE1E4FF"></Button>
+        </StackPanel>
+        <Grid x:Name="GridLogo" Grid.Row="0" HorizontalAlignment="Left" >
+            <Label Content="Участники ВОВ" HorizontalAlignment="Left" VerticalAlignment="Center"  
+                     Height="60" Width="360" Background="White" Padding="100,30,0,0" FontSize="16" Margin="0,15,0,35"/>
+            <Image Source ="Icon/14.jpg" Margin="5,5,0,5" Width="85" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <DataGrid Grid.Row="1" x:Name="DataGridAward"
+                  ColumnWidth="*"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionChanged="DataGridAward_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название"
+                                    Binding="{Binding name_of_the_award}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Binding="{Binding description}"/>
+
+                <DataGridTemplateColumn Header="Фото">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding photo}" Width="90" Height="50"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Header="Редактировать">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEditData" Click="BtnEditData_Click"  Content="Изменить" Background="#FFE1E4FF"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

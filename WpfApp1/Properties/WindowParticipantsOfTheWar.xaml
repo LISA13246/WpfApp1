@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApp1.Properties.WindowParticipantsOfTheWar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Properties"
+        mc:Ignorable="d"
+        Title="WindowParticipantsOfTheWar" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <UniformGrid Columns="2">
+            <TextBlock>Фамилия</TextBlock>
+            <TextBox Text="{Binding surname}" MaxLength="50"></TextBox>
+            <TextBlock>Имя</TextBlock>
+            <TextBox Text="{Binding name}" MaxLength="50"></TextBox>
+            <TextBlock>Отчество</TextBlock>
+            <TextBox Text="{Binding patronymic}" MaxLength="50"></TextBox>
+            <TextBlock>Пол</TextBlock>
+            <ComboBox x:Name="CmbGender"  DisplayMemberPath="gender" SelectedItem="{Binding Gender}"
+                      Background="White"></ComboBox>
+            <TextBlock>Дата рождения</TextBlock>
+            <TextBox Text="{Binding date_of_birth}"></TextBox>
+            <TextBlock>Дата смерти</TextBlock>
+            <TextBox Text="{Binding date_of_death}"></TextBox>
+            <TextBlock>Место призыва</TextBlock>
+            <TextBox Text="{Binding place_of_appeal}" TextChanged="TextBox_TextChanged"></TextBox>
+            <TextBlock>Звание</TextBlock>
+            <ComboBox x:Name="CmbMilitaryRank"  DisplayMemberPath="military_ranks" SelectedItem="{Binding MilitaryRank}"
+                      Background="White"></ComboBox>
+            <TextBlock>Место службы</TextBlock>
+            <TextBox Text="{Binding place_of_service}" TextChanged="TextBox_TextChanged_1"></TextBox>
+            <TextBlock>Место рождения</TextBlock>
+            <TextBox Text="{Binding place_of_birth}" TextChanged="TextBox_TextChanged_2"></TextBox>
+            <TextBlock>Место рождения</TextBlock>
+            <TextBox Text="{Binding place_of_birth}" TextChanged="TextBox_TextChanged_3"></TextBox>
+            <TextBlock>Биография</TextBlock>
+            <Image Source="{Binding biography}" Name="Img"></Image>
+        </UniformGrid>
+        <Button Grid.Row="1" x:Name="SaveData" Click="SaveData_Click"  Content="Сохранить"  Background="#FFE1E4FF"></Button>
+
+    </Grid>
+</Window>

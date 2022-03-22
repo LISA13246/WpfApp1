@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7efe8484ce614e7387f4a479be9e2341" Name="Diagram1">
+        <EntityTypeShape EntityType="ppModel.Award" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.AwardsOfParticipant" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.Gender" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.MilitaryRank" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.ParticipantsOfTheWar" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.ParticipantsWork" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.PlaceOfWork" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.Post" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppModel.sysdiagram" Width="1.5" PointX="5.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="ppModel.FK_AwardsOfParticipants_Awards" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_AwardsOfParticipants_ParticipantsOfTheWar" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_ParticipantsOfTheWar_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_ParticipantsOfTheWar_MilitaryRanks" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_ParticipantsWork_ParticipantsOfTheWar" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_ParticipantsWork_PlaceOfWork" ManuallyRouted="false" />
+        <AssociationConnector Association="ppModel.FK_ParticipantsWork_Post" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
